@@ -5,7 +5,7 @@ import sys
 def extract_fields(log_line):
     pattern = r'(\S+?)=(\S+?)\s'
     fields = re.findall(pattern, log_line)
-    return {field[0]: field[1] for field in fields}
+    return {field[0].strip(): field[1].strip() for field in fields}
 
 def main(log_file, excel_file):
     data = []
